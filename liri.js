@@ -81,7 +81,7 @@ function bandsInTown(artist){
 console.log(artist);
 var queryBands = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
 axios.get(queryBands).then(function(response){
-    console.log(JSON.stringify(response.data));
+    /* console.log(JSON.stringify(response.data)); */
     
     console.log("Name of the venue:", response.data[0].venue.name);
        console.log("Venue location:", response.data[0].venue.city + ","+response.data[0].venue.country);
@@ -95,7 +95,7 @@ axios.get(queryBands).then(function(response){
 });
 
 }
-bandsInTown();
+
 
 function songSearch(searchSong){
 /* access my keys information */
