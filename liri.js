@@ -20,11 +20,13 @@ var fs = require("fs");
 
 var result;
 
+//this allows the user to see results in node; second argument is the type and third is text
 var commandType = "";
 commandType = process.argv[2];
 var commandText = process.argv[3];
 commandSelection(commandType, commandText);
 
+//sets up the selection for each command
 function commandSelection(commandType, commandText) {
   switch (commandType) {
     case "concert-this":
@@ -46,7 +48,7 @@ function commandSelection(commandType, commandText) {
       break;
     case "do-what-it-says":
       console.log("do-what-it-says");
-      //readRandom();
+      readRandom();
       break;
     case "default":
       console.log("unknown");
@@ -69,7 +71,7 @@ function movieSearch(movieName) {
   axios
     .get(queryUrl)
     .then(function(response) {
-      console.log(response.data);
+     /*  console.log(response.data); */
       console.log("Movie Title: ", response.data.Title);
       console.log("Year the movie came out: ", response.data.Year);
       console.log("IMDB Rating: ", response.data.imdbRating);
@@ -98,15 +100,15 @@ function bandsInTown(artist) {
   axios
     .get(queryBands)
     .then(function(response) {
-      /* console.log(JSON.stringify(response.data)); */
-
+      /*  console.log(JSON.stringify(response.data));  */
+      
       console.log("Name of the venue:", response.data[0].venue.name);
       console.log(
         "Venue location:",
         response.data[0].venue.city + ", " + response.data[0].venue.country
       );
       console.log(
-        "Date of the Event",
+        "Date of the Event: ",
         moment(response.data[0].datetime).format("MM/DD/YYYY")
       );
     })
@@ -118,22 +120,23 @@ function bandsInTown(artist) {
 }
 
 function songSearch(searchSong) {
+
   /* access my keys information */
   var spotify = new Spotify(keys.spotify);
   /* the EASIEST way to find an artist, album, or track: */
   spotify
     .search({ type: "track", query: searchSong, market: "US", limit: 1 })
     .then(function(response) {
-    //    console.log(response.tracks.items[0]);
+      //    console.log(response.tracks.items[0]);
       console.log("Album Name: ", response.tracks.items[0].album.name);
       console.log("Song Name: ", response.tracks.items[0].name);
       console.log("Artist Name: ", response.tracks.items[0].artists[0].name);
-    
-      console.log("Song preview link: ", response.tracks.items[0].external_urls);
+
+      console.log(
+        "Song preview link: ",
+        response.tracks.items[0].external_urls
+      );
     })
-
-    
-
 
     .catch(function(err) {
       console.log(err);

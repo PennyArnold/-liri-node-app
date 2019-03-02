@@ -37,6 +37,10 @@ LIRI is a Language Interpretation and Recognition Interface. LIRI is a command l
         •	Name of the venue
         •	Venue location
         •	Date of the Event (moment.js library formats the date "MM/DD/YYYY")
+        It the user does not enter a concert/artist, node returns "Carlos".
+
+        To see a video of the working code, go to the following web files within this folder: assets\concert-this.webm and assets\concert-this default.webm
+
 2.3.2	Spotify-this
         LIRI spotify-this-song returns:
         •	Artist(s)
@@ -44,6 +48,10 @@ LIRI is a Language Interpretation and Recognition Interface. LIRI is a command l
         •	A preview link of the song from Spotify
         •	The album that the song is from
         If no song is typed in Node, then LIRI will return "The Sign" by Ace of Base.
+
+        To see a video of the working code, go to the following web files within this folder: 
+        assets\spotify-this-song default.webm and assets\spotify-this-song.webm
+
 2.3.3	Movie-this
         LIRI movie-this returns:
         •	Title of the movie
@@ -55,9 +63,15 @@ LIRI is a Language Interpretation and Recognition Interface. LIRI is a command l
         •	Plot of the movie
         •	Actors in the movie
         If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
+
+        To see a video of the working code, go to the following web files within this folder:
+        assets\movie-this default.webm and assets\movie-this.webm
+
 2.3.4	Do-what-it-says
-        LIRI do-what-it-says returns one of the following:
+        LIRI do-what-it-says returns the following:
         •	Spotify-this-song for "I Want it That Way"
-        •	Movie-this for “Napoleon Dynamite”
-        •	Concert-this for “Toby Mac”
+        
+        To see a video of the working code, go to the following web files within this folder:
+        assets\do-what-it-says.webm
+        
 
